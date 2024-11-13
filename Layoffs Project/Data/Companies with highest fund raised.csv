@@ -1,0 +1,117 @@
+company,location,industry,total_laid_off,percentage_laid_off,date,stage,country,funds_raised_millions
+Britishvolt,London,Transportation,206,1,2023-01-17,Unknown,"United Kingdom",2400
+Quibi,"Los Angeles",Media,NULL,1,2020-10-21,"Private Equity","United States",1800
+"Deliveroo Australia",Melbourne,Food,120,1,2022-11-15,Post-IPO,Australia,1700
+Katerra,"SF Bay Area",Construction,2434,1,2021-06-01,Unknown,"United States",1600
+BlockFi,"New York City",Crypto,NULL,1,2022-11-28,"Series E","United States",1000
+"Aura Financial","SF Bay Area",Finance,NULL,1,2021-01-11,Unknown,"United States",584
+Openpay,Melbourne,Finance,83,1,2023-02-07,Post-IPO,Australia,299
+Pollen,London,Marketing,NULL,1,2022-08-10,"Series C","United Kingdom",238
+"Simple Feast",Copenhagen,Food,150,1,2022-09-07,Unknown,Denmark,173
+"Arch Oncology",Brisbane,Healthcare,NULL,1,2023-01-13,"Series C","United States",155
+"Motif Investing","SF Bay Area",Finance,NULL,1,2020-04-18,"Series E","United States",126
+CommonBond,"New York City",Finance,NULL,1,2022-09-09,"Series D","United States",125
+Fast,"SF Bay Area",Finance,NULL,1,2022-04-05,"Series B","United States",124
+Reali,"SF Bay Area","Real Estate",140,1,2022-08-24,"Series B","United States",117
+"The Wing","New York City","Real Estate",NULL,1,2022-08-31,"Series C","United States",117
+Airlift,Lahore,Logistics,NULL,1,2022-07-12,"Series B",Pakistan,109
+Bluprint,Denver,Education,137,1,2020-05-26,Acquired,"United States",108
+Medly,"New York City",Healthcare,NULL,1,2023-02-08,"Series C","United States",100
+HOOQ,Singapore,Consumer,250,1,2020-03-27,Unknown,Singapore,95
+"Volt Bank",Sydney,Finance,NULL,1,2022-06-29,"Series E",Australia,90
+"Faze Medicines",Boston,Healthcare,NULL,1,2022-11-09,"Series B","United States",81
+Deliv,"SF Bay Area",Retail,669,1,2020-05-13,"Series C","United States",80
+Edmodo,"SF Bay Area",Education,NULL,1,2022-08-16,Acquired,"United States",77
+"Ozy Media","SF Bay Area",Media,NULL,1,2021-10-01,"Series C","United States",70
+"Stay Alfred",Spokane,Travel,221,1,2020-05-20,"Series B","United States",62
+Hubba,Toronto,Retail,45,1,2021-02-01,"Series B",Canada,61
+Locomation,Pittsburgh,Transportation,NULL,1,2023-02-22,Seed,"United States",57
+ShopX,Bengaluru,Retail,NULL,1,2022-08-22,Unknown,India,56
+"Butler Hospitality","New York City",Food,1000,1,2022-07-08,"Series B","United States",50
+"Bridge Connector",Nashville,Healthcare,154,1,2020-11-17,"Series B","United States",45
+JetClosing,Seattle,"Real Estate",NULL,1,2022-06-15,"Series B","United States",44
+"Buy.com / Rakuten","SF Bay Area",Retail,87,1,2020-07-30,Acquired,"United States",42
+Nuri,Berlin,Crypto,NULL,1,2022-10-17,"Series B",Germany,42
+Lantern,"Grand Rapids",Retail,NULL,1,2023-01-06,Seed,"United States",40
+"Fifth Season",Pittsburgh,Food,100,1,2022-10-28,"Series B","United States",35
+Propzy,"Ho Chi Minh City","Real Estate",NULL,1,2022-09-13,"Series A",Vietnam,33
+Awok,Dubai,Retail,NULL,1,2020-09-02,"Series A","United Arab Emirates",30
+Wyre,"SF Bay Area",Crypto,NULL,1,2023-01-04,Unknown,"United States",29
+Sorabel,Jakarta,Retail,NULL,1,2020-07-23,"Series B",Indonesia,27
+WanderJaunt,"SF Bay Area",Travel,85,1,2022-07-01,"Series B","United States",26
+Amplero,Seattle,Marketing,17,1,2020-03-29,"Series B","United States",25
+Brodmann17,"Tel Aviv",Other,NULL,1,2022-12-09,"Series A",Israel,25
+Automatic,"SF Bay Area",Transportation,NULL,1,2020-05-01,Acquired,"United States",24
+Kite,"SF Bay Area",Product,NULL,1,2022-11-16,"Series A","United States",21
+"Lido Learning",Mumbai,Education,NULL,1,2022-09-09,"Series C",India,20
+"Perceptive Automata",Boston,Transportation,NULL,1,2022-08-01,"Series A","United States",20
+Pocketmath,Singapore,Marketing,21,1,2021-01-20,Unknown,Singapore,20
+Metigy,Sydney,Marketing,75,1,2022-07-31,"Series B",Australia,18
+Soluto,"Tel Aviv",Support,120,1,2022-07-24,Acquired,Israel,18
+Kaodim,Selangor,Consumer,NULL,1,2022-06-02,"Series B","United States",17
+BeyondMinds,"Tel Aviv",Data,65,1,2022-05-23,"Series A",Israel,16
+Madefire,"SF Bay Area",Media,NULL,1,2021-04-29,"Series B","United States",16
+PicoBrew,Seattle,Food,NULL,1,2020-04-30,"Series A","United States",15
+Simple,Portland,Finance,NULL,1,2021-01-07,Acquired,"United States",15
+Rubica,Seattle,Security,NULL,1,2020-11-05,"Series A","United States",14
+HubHaus,"SF Bay Area","Real Estate",NULL,1,2020-09-11,"Series A","United States",13
+Popin,"New York City",Fitness,NULL,1,2020-03-19,Unknown,"United States",13
+Jump,"New York City",Transportation,500,1,2020-05-07,Acquired,"United States",11
+"Lumina Networks","SF Bay Area",Infrastructure,NULL,1,2020-08-18,"Series A","United States",10
+Playdots,"New York City",Consumer,65,1,2022-10-13,Acquired,"United States",10
+"Stockwell AI","SF Bay Area",Retail,NULL,1,2020-06-15,"Series B","United States",10
+Ahead,"SF Bay Area",Healthcare,44,1,2022-04-14,Unknown,"United States",9
+Fipola,Chennai,Food,NULL,1,2023-02-20,"Series A","United States",9
+"Flux Systems",London,Finance,NULL,1,2022-10-14,Unknown,"United Kingdom",9
+"Lora DiCarlo",Bend,Consumer,NULL,1,2022-12-02,Unknown,"United States",9
+Haus,"SF Bay Area",Food,NULL,1,2022-08-09,Seed,"United States",7
+SummerBio,"SF Bay Area",Healthcare,101,1,2022-06-20,Unknown,"United States",7
+GoodGood,Toronto,Retail,NULL,1,2022-11-23,Seed,Canada,6
+Help.com,Austin,Support,16,1,2020-03-16,Seed,"United States",6
+Pesto,"SF Bay Area",Other,NULL,1,2022-09-23,Seed,"United States",6
+Yabonza,Sydney,"Real Estate",NULL,1,2022-07-29,Unknown,Australia,6
+Consider.co,"SF Bay Area",Other,13,1,2020-03-26,Seed,"United States",5
+Gavelytics,"Los Angeles",Legal,NULL,1,2022-06-30,Seed,"United States",5
+Planetly,Berlin,Other,200,1,2022-11-04,Acquired,Germany,5
+Service,"Los Angeles",Travel,NULL,1,2020-03-16,Seed,"United States",5
+Service,"Los Angeles",Travel,NULL,1,2020-03-20,Seed,"United States",5
+"The Grommet",Boston,Retail,40,1,2022-06-09,Acquired,"United States",5
+"Engine eCommerce",Fayetteville,Retail,NULL,1,2020-06-28,Unknown,"United States",4
+Crejo.Fun,Bengaluru,Education,170,1,2022-06-30,Seed,India,3
+Dark,"SF Bay Area",Product,6,1,2020-06-23,Seed,"United States",3
+Masse,"New York City",Retail,NULL,1,2020-05-15,Seed,"United States",3
+SEND,Sydney,Food,300,1,2022-05-04,Seed,Australia,3
+Assure,"Salt Lake City",Finance,NULL,1,2022-11-23,Seed,"United States",2
+"Earth Rides",Nashville,Transportation,NULL,1,2023-01-19,Unknown,"United States",2
+"Halcyon Health","New York City",Healthcare,NULL,1,2022-04-15,Unknown,"United States",2
+TutorMundi,"Sao Paulo",Education,4,1,2020-04-24,"Series A",Brazil,2
+Udayy,Gurugram,Education,100,1,2022-06-01,Seed,India,2
+YourGrocer,Melbourne,Food,NULL,1,2022-12-19,Unknown,Australia,2
+Atsu,Seattle,Infrastructure,6,1,2020-04-10,Unknown,"United States",1
+Eatsy,Singapore,Food,20,1,2020-08-08,Seed,Singapore,1
+"Kitty Hawk","SF Bay Area",Aerospace,100,1,2022-09-21,Unknown,"United States",1
+Kune,Nairobi,Food,NULL,1,2022-06-23,Seed,Kenya,1
+Purse,"SF Bay Area",Crypto,NULL,1,2020-04-16,Seed,"United States",1
+WeFit,Hanoi,Fitness,NULL,1,2020-05-13,Seed,Vietnam,1
+SuperLearn,Bengaluru,Education,NULL,1,2022-06-21,Seed,India,0
+"Airy Rooms",Jakarta,Travel,NULL,1,2020-05-07,Unknown,Indonesia,NULL
+Bitfront,"SF Bay Area",Crypto,NULL,1,2022-11-29,Unknown,"United States",NULL
+"Digital Surge",Brisbane,Crypto,NULL,1,2022-12-09,Unknown,Australia,NULL
+Dotscience,London,Product,10,1,2020-05-19,Unknown,"United Kingdom",NULL
+"DUX Education",Bengaluru,Education,NULL,1,2023-02-28,Unknown,India,NULL
+Ejento,"SF Bay Area",Recruiting,84,1,2020-03-19,Unknown,"United States",NULL
+"EMX Digital","New York City",Marketing,100,1,2023-02-13,Unknown,"United States",NULL
+GloriFi,Dallas,Finance,NULL,1,2022-11-21,Unknown,"United States",NULL
+GoNuts,Mumbai,Media,NULL,1,2022-10-27,Seed,India,NULL
+Kandela,"Los Angeles",Consumer,NULL,1,2023-03-02,Acquired,"United States",NULL
+Limelight,"New York City",Recruiting,13,1,2021-02-04,Unknown,"United States",NULL
+"Mode Global",London,Finance,NULL,1,2023-01-26,Post-IPO,"United Kingdom",NULL
+"Nirvana Money",Miami,Finance,NULL,1,2022-11-15,Unknown,"United States",NULL
+Pastel,"SF Bay Area",Food,NULL,1,2022-09-30,Unknown,"United States",NULL
+Protocol,"SF Bay Area",Media,60,1,2022-11-15,Acquired,"United States",NULL
+Qin1,Noida,Education,NULL,1,2022-10-14,Seed,India,NULL
+Stoqo,Jakarta,Food,250,1,2020-04-25,"Series A",Indonesia,NULL
+Subspace,"Los Angeles",Infrastructure,NULL,1,2022-05-13,"Series B","United States",NULL
+"The Modist",Dubai,Retail,NULL,1,2020-04-02,Unknown,"United Arab Emirates",NULL
+Wavely,"SF Bay Area",HR,NULL,1,2022-11-10,Unknown,"United States",NULL
+WeTrade,Bengaluru,Crypto,NULL,1,2023-02-09,Unknown,India,NULL

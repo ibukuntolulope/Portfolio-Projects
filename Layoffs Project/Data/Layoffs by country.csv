@@ -1,0 +1,52 @@
+country,SUM(total_laid_off)
+"United States",256559
+India,35993
+Netherlands,17220
+Sweden,11264
+Brazil,10391
+Germany,8701
+"United Kingdom",6398
+Canada,6319
+Singapore,5995
+China,5905
+Israel,3638
+Indonesia,3521
+Australia,2324
+Nigeria,1882
+"United Arab Emirates",995
+France,915
+"Hong Kong",730
+Austria,570
+Russia,400
+Kenya,349
+Estonia,333
+Argentina,323
+Senegal,300
+Mexico,270
+Ireland,257
+Finland,250
+Spain,250
+Denmark,240
+Myanmar,200
+Norway,140
+Colombia,130
+Bulgaria,120
+Portugal,115
+Malaysia,100
+Japan,85
+Romania,80
+Seychelles,75
+Switzerland,62
+Lithuania,60
+Thailand,55
+"New Zealand",45
+Luxembourg,45
+Chile,30
+Poland,25
+Hungary,NULL
+Italy,NULL
+Pakistan,NULL
+Turkey,NULL
+"South Korea",NULL
+Vietnam,NULL
+Egypt,NULL
