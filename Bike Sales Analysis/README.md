@@ -103,7 +103,7 @@ Insights inform:
 - Regional stock distribution
 - Price point optimization
 
-## Skills Demonstrated
+## Skills 
 - Advanced Excel Dashboard Creation
 - Data Cleaning and Validation
 - Statistical Analysis
@@ -112,11 +112,3 @@ Insights inform:
 - Demographic Analysis
 - Trend Identification
 
-## Future Applications
-The analysis framework can be extended to:
-- Seasonal trend analysis
-- Product line expansion planning
-- Regional market development
-- Customer segment targeting
-
-Would you like me to elaborate on any specific aspect of the analysis or provide more detailed insights from particular demographic segments?
