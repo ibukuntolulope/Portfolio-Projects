@@ -1,4 +1,4 @@
-# Bike Store Sales Analysis & Executive Dashboard
+## Bike Store Sales Analysis & Executive Dashboard
 
 Led an end-to-end data analytics project analyzing $8.5M+ in bicycle sales data using SQL, Excel, and Tableau. Extracted and transformed raw data through SQL queries, developed interactive Excel dashboards with pivot tables, and created a comprehensive Tableau executive dashboard visualizing key metrics across revenue, products, geography, and sales performance. The analysis revealed critical business insights including product category performance, regional sales patterns, and top revenue drivers, leading to actionable recommendations for inventory optimization and market expansion.
 
