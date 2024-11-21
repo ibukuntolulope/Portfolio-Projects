@@ -1,7 +1,5 @@
--- Check which database you're currently using
 SELECT DB_NAME()
 
--- If needed, explicitly use the database
 USE BikeStores
 GO
 
