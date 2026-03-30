@@ -55,12 +55,12 @@ nhs-ae-analysis/
 │
 ├── sql/
 │   ├── 00_setup.sql                   # Create database and table
-│   ├── 01_worst_breach_rate.sql       # Challenge 1 — worst trusts by breach rate
-│   ├── 02_monthly_trend.sql           # Challenge 2 — national trend month by month
-│   ├── 03_most_improved.sql           # Challenge 3 — trusts that improved most
-│   ├── 04_regional_rankings.sql       # Challenge 4 — RANK() within each region
-│   ├── 05_12hr_lag_analysis.sql       # Challenge 5 — LAG() month-on-month changes
-│   └── 06_performance_scorecard.sql   # Challenge 6 — full multi-metric scorecard
+│   ├── 01_worst_breach_rate.sql       # Question 1 — worst trusts by breach rate
+│   ├── 02_monthly_trend.sql           # Question 2 — national trend month by month
+│   ├── 03_most_improved.sql           # Question 3 — trusts that improved most
+│   ├── 04_regional_rankings.sql       # Question 4 — RANK() within each region
+│   ├── 05_12hr_lag_analysis.sql       # Question 5 — LAG() month-on-month changes
+│   └── 06_performance_scorecard.sql   # Question 6 — full multi-metric scorecard
 │
 ├── NHS_AE_Portfolio_Project.docx      # Full written analysis and findings
 └── README.md
