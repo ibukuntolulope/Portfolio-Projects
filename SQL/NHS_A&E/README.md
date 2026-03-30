@@ -55,12 +55,12 @@ nhs-ae-analysis/
 │
 ├── sql/
 │   ├── 00_setup.sql                   # Create database and table
-│   ├── 01_worst_breach_rate.sql       # Question 1 — worst trusts by breach rate
-│   ├── 02_monthly_trend.sql           # Question 2 — national trend month by month
-│   ├── 03_most_improved.sql           # Question 3 — trusts that improved most
-│   ├── 04_regional_rankings.sql       # Question 4 — RANK() within each region
-│   ├── 05_12hr_lag_analysis.sql       # Question 5 — LAG() month-on-month changes
-│   └── 06_performance_scorecard.sql   # Question 6 — full multi-metric scorecard
+│   ├── 01_worst_breach_rate.sql       # Task 1 — worst trusts by breach rate
+│   ├── 02_monthly_trend.sql           # Task 2 — national trend month by month
+│   ├── 03_most_improved.sql           # Task 3 — trusts that improved most
+│   ├── 04_regional_rankings.sql       # Task 4 — RANK() within each region
+│   ├── 05_12hr_lag_analysis.sql       # Task 5 — LAG() month-on-month changes
+│   └── 06_performance_scorecard.sql   # Task 6 — full multi-metric scorecard
 │
 ├── NHS_AE_Portfolio_Project.docx      # Full written analysis and findings
 └── README.md
@@ -89,7 +89,17 @@ Go to the [NHS England A&E statistics page](https://www.england.nhs.uk/statistic
 
 ### 2. Combine and clean
 
-Open a blank Excel workbook and use **Data → Get Data → From File → From Folder** to combine all 12 files using Power Query. Apply the following M formula to convert the period column to a proper date:
+All 12 monthly CSV files were combined and cleaned using **Microsoft Excel Power Query** — no coding required.
+
+**Step-by-step:**
+
+1. Open a **blank Excel workbook** (do not open one of the CSV files directly)
+2. Click **Data → Get Data → From File → From Folder**
+3. Browse to the folder containing all 12 CSV files and click **OK**
+4. In the preview window, click **Combine → Combine & Load** and click **OK** on the sample file prompt
+5. Power Query stacks all 12 files automatically into one table
+6. In the **Power Query Editor**, delete the `Source.Name` column (added automatically by Power Query — not needed)
+7. Add a custom column (**Add Column → Custom Column**), name it `period`, and paste this M formula to convert the NHS period format (`MSitAE-APRIL-2023`) into a proper date (`2023-04-01`):
 
 ```
 let parts = Text.Split([Period], "-") in
@@ -107,7 +117,13 @@ Date.FromText(parts{2} & "-" &
    if parts{1} = "NOVEMBER" then "11" else "12") & "-01")
 ```
 
-Remove the TOTAL summary row, then save as **CSV UTF-8**.
+8. Delete the original `Period` column (now replaced by the clean `period` column)
+9. Use **Home → Remove Rows → Remove Errors** to drop the `TOTAl` summary row at the bottom of each monthly file (the date formula cannot parse it, so it becomes an error row — making it easy to remove)
+10. Click **Close & Load** to load the combined data back into Excel
+11. Format the `period` column as **Text** with format `YYYY-MM-DD` to ensure MySQL reads it correctly
+12. Save as **CSV UTF-8 (Comma delimited)** — choose this specific format, not plain CSV
+
+> **Note:** The raw NHS CSVs are tab-delimited despite having a `.csv` extension. Power Query handles this automatically when combining from folder — no manual delimiter change is needed.
 
 ### 3. Set up MySQL
 
