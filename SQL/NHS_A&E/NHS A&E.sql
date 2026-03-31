@@ -344,34 +344,68 @@ SELECT *
 FROM ranked
 ORDER BY national_rank_breach;
 
+-- OR
+
+WITH trust_stats AS (
+    SELECT
+        org_name,
+        ROUND(100.0 * SUM(over4hr_type1) / SUM(att_type1), 1) AS breach_pct,
+        SUM(wait_12hr_plus_dta) AS total_12hr_waits
+    FROM ae_waiting_times
+    WHERE att_type1 > 0
+    GROUP BY org_name
+),
+rated AS (
+    SELECT
+        org_name,
+        breach_pct,
+        total_12hr_waits,
+        CASE
+            WHEN breach_pct < 35 AND total_12hr_waits < 500  THEN 'Good'
+            WHEN breach_pct > 50 OR  total_12hr_waits > 5000 THEN 'Poor'
+            ELSE 'Average'
+        END AS rating
+    FROM trust_stats
+)
+SELECT 
+    rating,
+    COUNT(*) AS number_of_trusts
+FROM rated
+GROUP BY rating
+ORDER BY number_of_trusts DESC;
+
 /*NOTE TO SOLUTION 6
-The headline numbersOut of 125 trusts rated:
+Out of 125 major A&E trusts in England in 2023-24:
 
-37 rated Poor — over 1 in 4 trusts failing badly
-72 rated Average — performing but still missing the target significantly
-16 rated Good — only 1 in 8 trusts performing well
-The worst trust in EnglandUniversity Hospitals Birmingham stands out above everyone else — rank 1 for 12-hour waits with a staggering 20,278 patients waiting 12+ hours across the year. That's an average of 1,690 patients every single month. They also had the highest total attendances at 391,673 — they are the busiest and most pressured trust in the country.The most dangerous combinationSome trusts are both high breach rate AND high 12-hour waits — the worst of both worlds:
-East Kent — 53.9% breach rate AND 12,715 total 12-hour waits — ranked 10th worst for breach, 5th worst for 12-hour waits
-United Lincolnshire — worst breach rate in England at 60.9% AND 11,009 12-hour waits
-University Hospitals of Leicester — 46.2% breach AND 13,379 12-hour waits — ranked 3rd worst nationally for 12-hour waits
-East Lancashire — 36.5% breach rate but 12,903 12-hour waits — ranked 4th worst nationally. Their breach rate looks moderate but their 12-hour waits tell a far worse story
-The surprising outliersEpsom and St Helier is the most interesting anomaly in the entire dataset — their breach rate is only 24.7% which looks Good, but they have 6,473 total 12-hour waits which is rated Poor. This means patients are generally being seen within 4 hours, but once a doctor decides to admit them, they're then stuck waiting for a bed for 12+ hours. Two completely different problems happening at the same trust.St George's University Hospitals has a decent breach rate of 33% — which would normally rate Good — but 6,878 12-hour waits drags them to Poor. Same pattern as Epsom.County Durham and Darlington is the opposite — 48.1% breach rate which looks terrible, but only 148 total 12-hour waits all year. Patients wait a long time in A&E but once admitted they get a bed quickly.The genuinely Good performersThe 16 Good trusts fall into two categories:Specialist hospitals — Alder Hey Children's, Sheffield Children's, Birmingham Women's and Children's — these treat a different patient population so direct comparison isn't entirely fair.Genuinely high performing adult trusts — the ones worth paying attention to:
+47 Poor (38%) — nearly 4 in 10 trusts in crisis
+62 Average (50%) — half the country struggling but not at crisis level
+16 Good (13%) — only 1 in 8 trusts genuinely performing well
 
-Maidstone and Tunbridge Wells — 16.4% breach, 322 12-hour waits — best performing large adult trust in England
-Northumbria Healthcare — 23.5% breach, only 19 total 12-hour waits all year — extraordinary
-Calderdale and Huddersfield — 30.7% breach, only 23 total 12-hour waits — consistently excellent
-Chelsea and Westminster — 22.9% breach, 410 12-hour waits — excellent for a large London trust
-The regional story in one line each
-Midlands — dominated by Poor ratings, worst region overall
-London — most polarised — both the best and worst trusts in England are here
-North West — consistently Average to Poor, no standout performers
-North East and Yorkshire — most variation — from Sheffield Children's at 9.9% to York at 56.4%
-South East — split between Poor coastal trusts and Good inland tru
-East of England — quietly struggling — several trusts with high 12-hour waits that don't make headlines
+That means 87% of NHS trusts are failing to meet acceptable A&E standards when you combine Poor and Average together. This is not a localised problem — it is a nationwide systemic failure.
 
+The worst trusts — Poor rating deep dive
+University Hospitals Birmingham is the single most concerning trust in the entire dataset — 20,278 twelve-hour waits across the year averaging 1,690 patients every single month stuck in A&E after a doctor said they needed a bed. They are also ranked 33rd worst for breach rate at 47.1% — so they are failing on both measures simultaneously at enormous scale. They see 391,673 Type 1 patients a year, the busiest trust in the dataset but size alone doesn't explain this. Liverpool sees 201,974 patients and still racks up 14,118 twelve-hour waits. Scale is clearly a factor but not the whole story.
+East Kent is arguably the most consistently poor performer but never dropping below 769 twelve-hour waits even in summer, finishing the year with 12,715 total. Their breach rate of 53.9% is the worst in the South East. This trust has been in special measures before and this data suggests the problems are deeply entrenched.
+East Lancashire is the hidden crisis trust which ranked only 95th for breach rate at 36.5% which looks almost acceptable, but ranked 4th worst nationally for twelve-hour waits with 12,903 patients. This tells a very specific story, patients are moving through A&E at a reasonable pace but there are simply no beds to admit them to. This is a whole-hospital capacity problem, not an A&E problem.
+Epsom and St Helier is the most misleading trust in the dataset at first glance, a breach rate of just 24.7% would suggest good performance, yet they rate Poor due to 6,473 twelve-hour waits. This is a perfect example of why a single metric is dangerous in performance analysis. Their A&E is fast but their bed management is in crisis.
+Countess of Chester rates Poor — 7,337 twelve-hour waits — yet their breach rate of 48.4% puts them only 27th worst. Again, two very different problems happening simultaneously.
 
-The key analytical insight
-The rating column exposes something important — breach rate and 12-hour waits tell different stories. A trust can look Average on one metric and catastrophic on another. This is exactly why real NHS analysts build multi-metric scorecards rather than relying on a single headline number.
+The Good trusts — what genuine excellence looks like
+Maidstone and Tunbridge Wells is the standout performer in the entire country with 16.4% breach rate (the best non-specialist adult trust) and only 322 twelve-hour waits. They see 215,773 patients a year — this is not a quiet rural hospital. Something is genuinely working differently here and it deserves investigation.
+Calderdale and Huddersfield is perhaps the most impressive result in context, 177,149 attendances with only 23 twelve-hour waits all year. Compare that directly to Lewisham and Greenwich who see a similar volume of 158,517 patients but had 6,895 twelve-hour waits. Same workload, completely different outcomes. The gap between these two trusts is one of the most striking findings in the entire dataset.
+Northumbria Healthcare rates Good with a 23.5% breach rate and just 19 twelve-hour waits, remarkable for a trust covering a large geographic area in the North East.
+Chelsea and Westminster sees 226,315 patients — one of the busiest trusts in London, yet manages a 22.9% breach rate and only 410 twelve-hour waits. In a region where Hillingdon manages 58.3% breaches and King's College has nearly 8,000 twelve-hour waits, Chelsea and Westminster look like a different NHS entirely.
+
+The most important analytical findings
+Finding 1 — Breach rate and twelve-hour waits are measuring different problems. A trust can fail badly on one and perform well on the other. Sheffield Teaching Hospitals has a 50.1% breach rate but only 100 twelve-hour waits — their A&E is slow but beds are available. East Lancashire has a 36.5% breach rate but 12,903 twelve-hour waits — their A&E moves quickly but the hospital behind it is full. These require completely different solutions.
+Finding 2 — Geography is not destiny. Every region has both Poor and Good trusts. London has Homerton at 19% breach and Hillingdon at 58.3%. The North East has Sheffield Children's at 9.9% and York and Scarborough at 56.4%. Local management, culture, and capacity decisions matter enormously.
+Finding 3 — Volume does not explain performance. Some of the busiest trusts rate Good. Some of the smallest trusts rate Poor. The Isle of Wight with only 44,547 attendances rates Average with 3,243 twelve-hour waits. Mid and South Essex with 365,357 attendances — the highest in the dataset — rates Good with only 236 twelve-hour waits.
+Finding 4 — The winter cliff edge is universal. Every single trust without exception showed a dramatic worsening from October 2023 onwards. This is not about individual trust management — it is about a healthcare system without enough winter capacity built in.
+Finding 5 — Data quality remains a concern. Mid Yorkshire showing 0.0% breach rate, Kettering and Milton Keynes showing zero twelve-hour waits, and several trusts with missing months all suggest reporting inconsistencies that would need investigating before using this data in a formal report.
+
+In conclusion
+The 2023-24 NHS A&E data tells a story of a system under extreme and widespread pressure. The 16 Good trusts prove that high performance is achievable within the NHS. The question is why the other 109 trusts cannot replicate it. The answer almost certainly lies in bed availability, community care capacity, and workforce levels rather than A&E management alone. A&E is where the pressure shows, but the causes are deeper in the system.
+
 ===================
 */
 
