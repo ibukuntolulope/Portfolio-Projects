@@ -56,19 +56,20 @@ nhs-sql-analysis/
 │
 ├── sql/
 │   ├── 01_setup.sql           # Create database and tables
-│   ├── 02_Task1.sql      # Worst breach rates by trust
-│   ├── 03_Task2.sql      # Monthly national trend
-│   ├── 04_Task3.sql      # First vs second half comparison
-│   ├── 05_Task4.sql      # Regional rankings with RANK()
-│   ├── 06_Task5.sql      # 12-hour waits with LAG()
-│   ├── 07_Task6.sql      # Full trust scorecard
-│   └── 08_Task7.sql      # Cross-dataset JOIN analysis
+│   ├── 02_task1.sql           # Worst breach rates by trust
+│   ├── 03_task2.sql           # Monthly national trend
+│   ├── 04_task3.sql           # First vs second half comparison
+│   ├── 05_task4.sql           # Regional rankings with RANK()
+│   ├── 06_task5.sql           # 12-hour waits with LAG()
+│   ├── 07_task6.sql           # Full trust scorecard
+│   └── 08_task7.sql           # Cross-dataset JOIN analysis
 │
 ├── python/
 │   ├── combine_nhs_ae.py      # Combine 12 monthly A&E CSVs into one file
 │   ├── filter_opioids.py      # Pull opioid rows from 17M row prescribing file
 │   ├── clean_opioids.py       # Fix line endings before MySQL import
-│   └── load_opioids.py        # Load filtered data into MySQL
+│   ├── load_opioids_v3.py     # Final working loader - batch insert into MySQL
+│   └── load_opioids.py        # Earlier attempts (reference only)
 │
 └── README.md
 ```
@@ -95,7 +96,7 @@ Run `sql/01_setup.sql` in MySQL Workbench to create the nhs_ae database and tabl
 Use the Table Data Import Wizard in MySQL Workbench to load your combined CSV into ae_waiting_times.
 
 ### Step 5 - Get the prescribing data
-Download the April 2023 EPD file from the [NHS BSA Open Data Portal](https://opendata.nhsbsa.net/dataset/english-prescribing-data-epd). The file has 17 million rows so run `python/filter_opioids.py` first to pull out only the opioid rows (BNF code starting with 0407010). Then run `python/clean_opioids.py` and `python/load_opioids.py` to load it into MySQL.
+Download the April 2023 EPD file from the [NHS BSA Open Data Portal](https://opendata.nhsbsa.net/dataset/english-prescribing-data-epd). The file has 17 million rows so run `python/filter_opioids.py` first to pull out only the opioid rows (BNF code starting with 0407010). The raw file has 17 million rows so the loading process took a few attempts. First run `python/filter_opioids.py` to extract only opioid rows (around 408,000 rows). Then run `python/clean_opioids.py` to fix line endings. Finally use `python/load_opioids_v3.py` to load the data into MySQL in batches of 5,000 rows. Note: LOAD DATA INFILE and the MySQL Table Data Import Wizard both timed out on this file, so the Python batch insert approach in load_opioids_v3.py is the reliable method.
 
 ### Step 6 - Run the queries
 Work through the SQL files in the sql folder in order.
