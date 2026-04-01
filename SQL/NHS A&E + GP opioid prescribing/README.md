@@ -34,7 +34,7 @@ Both are published under the Open Government Licence v3.0 and are free to downlo
 
 ## SQL skills covered
 
-| Challenge | What I used | Question it answered |
+| Task | What I used | Question it answered |
 |-----------|-------------|----------------------|
 | 1 | SELECT, SUM, ROUND, GROUP BY, ORDER BY, LIMIT | Which 10 trusts had the worst 4-hour breach rate? |
 | 2 | GROUP BY on a date column, time series | How did the national breach rate change month by month? |
