@@ -56,13 +56,13 @@ nhs-sql-analysis/
 │
 ├── sql/
 │   ├── 01_setup.sql           # Create database and tables
-│   ├── 02_challenge1.sql      # Worst breach rates by trust
-│   ├── 03_challenge2.sql      # Monthly national trend
-│   ├── 04_challenge3.sql      # First vs second half comparison
-│   ├── 05_challenge4.sql      # Regional rankings with RANK()
-│   ├── 06_challenge5.sql      # 12-hour waits with LAG()
-│   ├── 07_challenge6.sql      # Full trust scorecard
-│   └── 08_challenge7.sql      # Cross-dataset JOIN analysis
+│   ├── 02_Task1.sql      # Worst breach rates by trust
+│   ├── 03_Task2.sql      # Monthly national trend
+│   ├── 04_Task3.sql      # First vs second half comparison
+│   ├── 05_Task4.sql      # Regional rankings with RANK()
+│   ├── 06_Task5.sql      # 12-hour waits with LAG()
+│   ├── 07_Task6.sql      # Full trust scorecard
+│   └── 08_Task7.sql      # Cross-dataset JOIN analysis
 │
 ├── python/
 │   ├── combine_nhs_ae.py      # Combine 12 monthly A&E CSVs into one file
